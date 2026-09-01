@@ -18,7 +18,7 @@ En este orden:
 1. [`.editorconfig`](../02-tools/editorconfig.md)
 2. [`.gitattributes`](../02-tools/gitattributes.md)
 3. [Prettier](../02-tools/prettier.md)
-4. Stylelint — pendiente
+4. [Stylelint](../02-tools/stylelint.md)
 5. `.gitignore` — [ver abajo](#gitignore)
 
 ## Instalación
@@ -64,6 +64,16 @@ css/
 # Enforce pnpm as the only package manager
 package-lock.json
 yarn.lock
+
+# VS Code — project config is committed, personal config is not.
+# Must be `.vscode/*` with the asterisk: Git never descends into an
+# ignored directory, so `.vscode/` would make the negations below dead.
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/*.code-snippets
 
 # Claude Code
 .claude/
@@ -120,16 +130,17 @@ TODO revisar los scripts a configurar
 
 ```bash
 pnpm format:check
+pnpm lint:css
 ```
 
-Exit code `0` y este mensaje = todo bien formateado:
+`format:check` da exit code `0` y este mensaje cuando todo está formateado:
 
 ```
 Checking formatting...
 All matched files use Prettier code style!
 ```
 
-TODO añadir todo lo necesario para stylelint
+`lint:css` da exit code `0` y sin salida cuando no encuentra problemas. Requiere el `.stylelintrc.json` que crea la guía de [Stylelint](../02-tools/stylelint.md); sin ese archivo el comando aborta.
 TODO revisar como queda lo de .vcode
 TODO compartir los warnings que me esta dando el otro proyecto
 TODO correr comandos y verificar errores

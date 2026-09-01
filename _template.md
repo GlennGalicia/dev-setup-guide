@@ -73,7 +73,8 @@ evita que la shell lo expanda. Mantenlo siempre.>
 ## Comandos útiles
 [↑ Volver arriba](#herramienta)
 
-Agrega los scripts a tu `package.json`:
+<Si el stack tiene un lanzador de scripts, indícalo aquí. Si no —Python, por
+ejemplo—, escribe los comandos directos y borra este bloque.>
 
 ```json
 "scripts": {}

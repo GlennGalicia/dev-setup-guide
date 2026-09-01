@@ -36,11 +36,11 @@ Checklist por tipo de proyecto.
 
 | Archivo | Estado |
 |---|---|
-| [html-css-sass.md](./01-stacks/html-css-sass.md) | En progreso |
+| [html-css-sass.md](./01-stacks/html-css-sass.md) | Listo |
 | js-vanilla.md | Pendiente |
 | react.md | Pendiente |
 | angular.md | Pendiente |
-| python3.md | Pendiente |
+| [python3.md](./01-stacks/python3.md) | Listo |
 
 ## 02-tools
 [↑ Volver arriba](#dev-setup-guide)
@@ -52,11 +52,9 @@ Cómo funciona cada herramienta. Se explica una sola vez.
 | [editorconfig.md](./02-tools/editorconfig.md) | Listo |
 | [gitattributes.md](./02-tools/gitattributes.md) | Listo |
 | [prettier.md](./02-tools/prettier.md) | Listo |
-| gitignore.md | Pendiente |
 | eslint.md | Pendiente |
-| stylelint.md | Pendiente |
-| ruff.md | Pendiente |
-| venv.md | Pendiente |
+| [stylelint.md](./02-tools/stylelint.md) | Listo |
+| [ruff.md](./02-tools/ruff.md) | Listo |
 
 ## 99-reference
 [↑ Volver arriba](#dev-setup-guide)
