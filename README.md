@@ -52,9 +52,11 @@ Cómo funciona cada herramienta. Se explica una sola vez.
 | [editorconfig.md](./02-tools/editorconfig.md) | Listo |
 | [gitattributes.md](./02-tools/gitattributes.md) | Listo |
 | [prettier.md](./02-tools/prettier.md) | Listo |
+| [husky.md](./02-tools/husky.md) (JS) | Listo |
 | eslint.md | Pendiente |
 | [stylelint.md](./02-tools/stylelint.md) | Listo |
 | [ruff.md](./02-tools/ruff.md) | Listo |
+| [pre-commit.md](./02-tools/pre-commit.md) (Python) | Listo |
 
 ## 99-reference
 [↑ Volver arriba](#dev-setup-guide)

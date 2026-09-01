@@ -19,7 +19,8 @@ En este orden:
 2. [`.gitattributes`](../02-tools/gitattributes.md)
 3. [Prettier](../02-tools/prettier.md)
 4. [Stylelint](../02-tools/stylelint.md)
-5. `.gitignore` — [ver abajo](#gitignore)
+5. [Husky](../02-tools/husky.md) — requiere Prettier y Stylelint ya configurados
+6. `.gitignore` — [ver abajo](#gitignore)
 
 ## Instalación
 [↑ Volver arriba](#html--css--sass)

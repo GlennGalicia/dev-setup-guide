@@ -18,7 +18,8 @@ En este orden:
 1. [`.editorconfig`](../02-tools/editorconfig.md)
 2. [`.gitattributes`](../02-tools/gitattributes.md)
 3. [Ruff](../02-tools/ruff.md)
-4. `.gitignore` — [ver abajo](#gitignore)
+4. [pre-commit](../02-tools/pre-commit.md) — requiere Ruff ya configurado
+5. `.gitignore` — [ver abajo](#gitignore)
 
 Los dos primeros se usan **tal cual**, sin cambios respecto a cualquier otro stack:
 
