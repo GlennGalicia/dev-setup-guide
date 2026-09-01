@@ -33,15 +33,10 @@ De mayor a menor prioridad:
 
 No se instala nada, Git ya lo soporta.
 
-Crea el archivo `.gitattributes`, raíz de tu proyecto:
+Crea el archivo `.gitattributes` en la raíz de tu proyecto, ya con su contenido:
 
 ```bash
-echo > .gitattributes
-```
-
-Ahora, abre el archivo y coloca:
-
-```
+cat > .gitattributes << 'EOF'
 # Normalize line endings to LF in the repository
 * text=auto eol=lf
 
@@ -59,7 +54,10 @@ Ahora, abre el archivo y coloca:
 
 # SVG is XML, treat it as text for readable diffs
 *.svg text
+EOF
 ```
+
+> **`>` trunca.** Si el archivo ya existía con contenido, este comando lo reemplaza por completo sin preguntar.
 
 ## Comandos útiles
 [↑ Volver arriba](#gitattributes)

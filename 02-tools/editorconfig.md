@@ -16,19 +16,19 @@ Define indentación, codificación y finales de línea para todo el repositorio.
 
 **¿Para qué sirve en la práctica?**
 
-Que un archivo se vea igual sin importar quién lo abra ni en qué editor. Aplica a todos los archivos del repo, incluidos los que Prettier no toca: `.md`, `.yml`, `.env`, `.py`.
+Que un archivo se vea igual sin importar quién lo abra ni en qué editor. Aplica a todos los archivos del repo, incluidos los que ningún formateador cubre: `.env`, `Dockerfile`, `.sql`, `.ini`.
 
 ## Precedencias
 [↑ Volver arriba](#editorconfig)
 
 De mayor a menor prioridad:
 
-1. `.prettierrc`
+1. La configuración del formateador del proyecto, si lo hay
 2. `.editorconfig`
 3. Defaults del editor
 
-* Prettier traduce solo cinco propiedades: `indent_style`, `indent_size`, `max_line_length`, `end_of_line` y `quote_type`. El resto las ignora.
-* Si una opción está en los dos archivos, gana `.prettierrc`. No la repitas.
+* Si una opción está definida en los dos, gana el formateador. No la repitas.
+* No todos los formateadores leen `.editorconfig`, y los que lo hacen traducen solo algunas propiedades. Cuáles, lo dice el doc de cada herramienta.
 * Si hay varios `.editorconfig` en carpetas anidadas, gana el más cercano al archivo. La búsqueda se detiene en el que tenga `root = true`.
 
 ## Instalación
@@ -42,15 +42,10 @@ No se instala nada en el proyecto, pero el editor necesita soportarlo.
 ## Configuración
 [↑ Volver arriba](#editorconfig)
 
-Crea el archivo `.editorconfig`, raíz de tu proyecto:
+Crea el archivo `.editorconfig` en la raíz de tu proyecto, ya con su contenido:
 
 ```bash
-echo > .editorconfig
-```
-
-Ahora, abre el archivo y coloca:
-
-```ini
+cat > .editorconfig << 'EOF'
 root = true
 
 [*]
@@ -69,7 +64,10 @@ indent_size = 4
 
 [Makefile]
 indent_style = tab
+EOF
 ```
+
+> **`>` trunca.** Si el archivo ya existía con contenido, este comando lo reemplaza por completo sin preguntar.
 
 Un solo archivo cubre todos los stacks. Las secciones por extensión hacen el trabajo, no hace falta un `.editorconfig` por lenguaje.
 
@@ -82,22 +80,16 @@ Nada más. El editor lo aplica desde el siguiente archivo que abras.
 
 **Proyecto existente:**
 
-El `.editorconfig` solo afecta lo que edites de aquí en adelante; no reformatea lo que ya está. Para emparejar todo el proyecto de una vez:
+El `.editorconfig` solo afecta lo que edites de aquí en adelante; no reformatea lo que ya está.
 
-```bash
-pnpm format
-```
+Para emparejar un proyecto existente necesitas un formateador, y cuál sea depende del stack: lo indica la checklist en `01-stacks`.
 
 ## Verificación
 [↑ Volver arriba](#editorconfig)
 
 Abre cualquier archivo y presiona Tab. Deben insertarse 2 espacios, no un tabulador.
 
-Para revisar todo el proyecto sin instalar nada:
-
-```bash
-npx editorconfig-checker
-```
+En un `.md`, escribe dos espacios al final de una línea y guarda. Deben seguir ahí: es lo que hace la sección `[*.md]`.
 
 ## Diccionario
 [↑ Volver arriba](#editorconfig)

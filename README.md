@@ -1,6 +1,6 @@
 # dev-setup-guide
 
-Guía personal de configuración de proyectos. Al arrancar algo nuevo, entro aquí, busco el stack y sigo la checklist.
+Guía personal de configuración de proyectos. Al arrancar algo nuevo, entra aquí, busca el stack y sigue la checklist.
 
 ## Contenido
 
@@ -36,7 +36,7 @@ Checklist por tipo de proyecto.
 
 | Archivo | Estado |
 |---|---|
-| [html-css-sass.md](./01-stacks/html-css-sass.md) | Listo |
+| [html-css-sass.md](./01-stacks/html-css-sass.md) | En progreso |
 | js-vanilla.md | Pendiente |
 | react.md | Pendiente |
 | angular.md | Pendiente |

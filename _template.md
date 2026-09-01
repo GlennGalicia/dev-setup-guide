@@ -57,17 +57,18 @@ Verifica que quedó instalado:
 ## Configuración
 [↑ Volver arriba](#herramienta)
 
-Crea el archivo `<archivo>`, raíz de tu proyecto:
+Crea el archivo `<archivo>` en la raíz de tu proyecto, ya con su contenido:
 
 ```bash
-<comando para crearlo>
-```
-
-Ahora, abre el archivo y coloca:
-
-```<lenguaje>
+cat > <archivo> << 'EOF'
 <contenido>
+EOF
 ```
+
+> **`>` trunca.** Si el archivo ya existía con contenido, este comando lo reemplaza por completo sin preguntar.
+
+<Si el contenido incluye `$`, el delimitador entrecomillado (`'EOF'`) es lo que
+evita que la shell lo expanda. Mantenlo siempre.>
 
 ## Comandos útiles
 [↑ Volver arriba](#herramienta)

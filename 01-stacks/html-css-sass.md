@@ -39,21 +39,17 @@ pnpm add -D --save-exact prettier stylelint stylelint-config-standard-scss sass
 ## .gitignore
 [↑ Volver arriba](#html--css--sass)
 
-Crea el archivo `.gitignore`, raíz de tu proyecto:
+Crea el archivo `.gitignore` en la raíz de tu proyecto, ya con su contenido:
 
 ```bash
-echo > .gitignore
-```
-
-Ahora, abre el archivo y coloca:
-
-```
+cat > .gitignore << 'EOF'
 # Dependencies
 node_modules/
 
 # Build outputs
 dist/
 build/
+css/
 *.css.map
 .sass-cache/
 
@@ -71,15 +67,23 @@ yarn.lock
 
 # Claude Code
 .claude/
+EOF
 ```
 
-`build/` y `dist/` sin `/` al inicio matchean a cualquier profundidad, así que
+> **`>` trunca.** Si el archivo ya existía con contenido, este comando lo reemplaza por completo sin preguntar.
+
+`build/`, `dist/` y `css/` sin `/` al inicio matchean a cualquier profundidad, así que
 cubren también `11-cafeteria/build/` y cualquier carpeta que agregues después.
+
+`css/` es la salida de Sass, no código fuente. Prettier lee este archivo, así que
+al ignorarlo aquí tampoco lo formatea: no hay que repetirlo en el `.prettierignore`.
 
 ## Estructura de carpetas
 [↑ Volver arriba](#html--css--sass)
 
 Arquitectura 7-1 de Sass:
+
+TODO añadir estructura de mis proyectos
 
 ```
 scss/
@@ -99,6 +103,8 @@ Solo `main.scss` se compila. Los demás archivos llevan guion bajo
 ## Scripts de package.json
 [↑ Volver arriba](#html--css--sass)
 
+TODO revisar los scripts a configurar
+
 ```json
 "scripts": {
   "sass": "sass scss/main.scss css/style.css --watch",
@@ -114,7 +120,16 @@ Solo `main.scss` se compila. Los demás archivos llevan guion bajo
 
 ```bash
 pnpm format:check
-pnpm lint:css
 ```
 
-Sin salida y sin error = todo bien.
+Exit code `0` y este mensaje = todo bien formateado:
+
+```
+Checking formatting...
+All matched files use Prettier code style!
+```
+
+TODO añadir todo lo necesario para stylelint
+TODO revisar como queda lo de .vcode
+TODO compartir los warnings que me esta dando el otro proyecto
+TODO correr comandos y verificar errores
